@@ -1,7 +1,5 @@
 import controller, sys
-import model   # Pass a reference to this model module to update calls in update_all
-
-# Use the reference to this module to pass it to update methods
+import model 
 
 from ball      import Ball
 from floater   import Floater
@@ -10,7 +8,7 @@ from pulsator  import Pulsator
 from hunter    import Hunter
 from special   import special
 
-# Global variables: declare them global in functions that assign to them: e.g., ... = or +=
+
 running = False
 cycle_count = 0
 simultons = set()
@@ -54,15 +52,12 @@ def step ():
     model.stop()
 
 
-#remember the kind of object to add to the simulation when an (x,y) coordinate in the canvas
-#  is clicked next (or remember to remove an object by such a click)   
+
 def select_object(kind):
     global clicked
     clicked = kind 
 
 
-#add the kind of remembered object to the simulation (or remove all objects that contain the
-#  clicked (x,y) coordinate
 def mouse_click(x,y):
     global clicked
     if clicked != "Remove":
@@ -94,10 +89,7 @@ def find(p):
 
 
 #call update \(pass model as its argument\) for every simulton in the simulation
-#this function should loop over one set containing all the simultons
-#  and should not call type or isinstance: let each simulton do the
-#  right thing for itself, without this function knowing what kinds of
-#  simultons are in the simulation
+
 def update_all():
     global cycle_count
     if running:
@@ -107,13 +99,7 @@ def update_all():
             if s in simultons:
                 s.update(model)
 
-#S19/#delete every simulton from the canvas in the simulation; then call display on each
-#  simulton being simulated to add it back to the canvas, possibly in a new location, to
-#  animate it; also, update the progress label defined in the controller
-#this function should loop over one set containing all the simultons
-#  and should not call type or isinstance: let each simulton do the
-#  right thing for itself, without this function knowing what kinds of
-#  simultons are in the simulation
+
 def display_all():
     for o in controller.the_canvas.find_all():
         controller.the_canvas.delete(o)
