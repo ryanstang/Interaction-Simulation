@@ -1,33 +1,7 @@
 # Mobile_Simultons have angles (in radians) and speeds
 #   (in pixels/update); they inherit locations and
 #   dimensions (and methods) from Simulton.
-# These are initialized in __init__ and can be
-#    queried and set using methods.
-# Three useful methods help mobile simultons move on their
-#   canvas, by updating their location and changing their
-#   angle (bouncing) if they hit a wall.
 
-
-# The angle unit is radians. If you are unfamiliar with this
-# unit, examine the diagram below in which all units are in radians. 
-# Because the y coordinates get bigger as a simulton goes downward
-# in the canvas, negative and positive (in the y coordinate) are
-# reversed here from the normal orientation.
-#
-#
-#                  3pi/2 (or -pi/2)
-#                     |
-#                     |
-#                     | 
-#                     |
-#                     |
-# pi (or -pi) --------+-------- 0 (or 2pi)
-#                     |
-#                     |
-#                     |
-#                     |
-#                     |
-#                   pi/2
 
 
 import math,random
