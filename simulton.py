@@ -6,12 +6,6 @@ import random
 import re
 import sys
 
-#
-# Complete the 'getMaxStreaks' function below.
-#
-# The function is expected to return an INTEGER_ARRAY.
-# The function accepts STRING_ARRAY toss as parameter.
-#
 
 def getMaxStreaks(toss):
     result = [0,0]
